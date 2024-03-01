@@ -1,3 +1,10 @@
+#!/usr/bin/python3
+""" making change """
+
+
+def makeChange(coins, total):
+    """ making change function """
+
 def makeChange(coins, total):
     if total <= 0:
         return 0
