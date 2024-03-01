@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-""" making changes """
+""" making change """
 
 
 def makeChange(coins, total):
-    """ Generate changes needed to reach total"""
+    """ hange needed to reach total"""
     if total <= 0:
         return 0
     check = 0
