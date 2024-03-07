@@ -1,17 +1,20 @@
 #!/usr/bin/python3
+""" island perimeter problem """
 
 
 def island_perimeter(grid):
-    perimeter = 0
-    for i in range(len(grid)):
-        for j in range(len(grid[i])):
+    """ island perimeter problem """
+    w = len(grid[0])
+    h = len(grid)
+    e = 0
+    s = 0
+
+    for i in range(h):
+        for j in range(w):
             if grid[i][j] == 1:
-                if i == 0 or grid[i-1][j] == 0:
-                    perimeter += 1
-                if i == len(grid)-1 or grid[i+1][j] == 0:
-                    perimeter += 1
-                if j == 0 or grid[i][j-1] == 0:
-                    perimeter += 1
-                if j == len(grid[i])-1 or grid[i][j+1] == 0:
-                    perimeter += 1
-    return perimeter
+                s += 1
+                if (j > 0 and grid[i][j - 1] == 1):
+                    e += 1
+                if (i > 0 and grid[i - 1][j] == 1):
+                    e += 1
+    return s * 4 - e * 2
